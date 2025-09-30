@@ -40,4 +40,14 @@ public class CalculadoraIntegracaoTest {
         assertEquals(2, historico.getNumeroDeOperacoes(), "Deveriam haver 2 operações registradas");
         assertEquals("20 - 10 = 10", historico.getUltimaOperacao(), "A última operação registrada está incorreta");
     }
+    @Test
+    void deveMultiplicarESalvarNoHistoricoCorretamente() {
+
+        int resultado = calculadora.multiplicar(3, 4);
+
+        assertEquals(12, resultado, "O resultado da multiplicação deve ser 12");
+        assertEquals(1, historico.getNumeroDeOperacoes(), "Deveria haver 1 operação registrada");
+        assertEquals("3 * 4 = 12", historico.getUltimaOperacao(), "A descrição da operação no histórico está incorreta");
+    }
+
 }
